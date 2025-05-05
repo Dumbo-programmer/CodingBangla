@@ -14,20 +14,17 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     if (id === storedID && bcrypt.compareSync(password, storedHashedPassword)) {
       localStorage.setItem("loggedIn", "true");
-
       navigate("/home");
     } else {
       localStorage.setItem("loggedIn", "false");
-
       setError("Invalid ID or password");
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] flex items-center justify-center px-4">
+    <div className="w-screen h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-white/20">
         <h1 className="text-3xl font-bold text-white text-center mb-6">
           🔐 Welcome Back
